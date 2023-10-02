@@ -10,10 +10,10 @@
 ; one for the lower bound of the range and one for the upper bound
 
 (define-fun Tf_lower ((l Real) (u Real)) Real
-(ite (> l 0) l (ite (< u 0) (- u) 0)))
+(ite (> l 0) 0 (* 2 l))
 
 (define-fun Tf_upper ((l Real) (u Real)) Real
-(ite (> l 0) u (ite (< u 0) (- l) (ite (> (abs l) (abs u)) (abs l) (abs u)))))
+(ite (> l 0) 0 (* 2 u))
 
 
 ; To state the correctness of the transformer, ask the solver if there is 
