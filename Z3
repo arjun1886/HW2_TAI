@@ -15,12 +15,6 @@
 (define-fun Tf_upper ((l Real) (u Real)) Real
 (ite (> l 0) u (ite (< u 0) (- l) (ite (> (abs l) (abs u)) (abs l) (abs u)))))
 
-(define-fun Tf_lower ((l Real) (u Real)) Real
-(ite (> l 0) l (ite (< u 0) (- u) 0)))
-
-(define-fun Tf_upper ((l Real) (u Real)) Real
-(ite (> l 0) u (ite (< u 0) (- l) (ite (> (abs l) (abs u)) (abs l) (abs u)))))
-
 
 ; To state the correctness of the transformer, ask the solver if there is 
 ; (1) a Real number x and (2) an interval [l,u]
